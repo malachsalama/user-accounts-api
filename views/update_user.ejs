@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("./partials/_header.ejs") %>
+
+  <body>
+    <%- include("./partials/_nav.ejs") %>
+
+    <div><h1>Update user</h1></div>
+    <div class="create-user">
+      <form method="POST" id="update_user">
+        <label for="name">Username:</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          value="<%= user.name %>"
+          required
+        />
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          value="<%= user.email %>"
+          required
+        />
+        <input type="hidden" name="id" value="<%= user._id %>" />
+        <label
+          >Birth Date:
+          <input
+            type="date"
+            id="birthDate"
+            name="birthDate"
+            value="<%= user.birthDate %>"
+            required
+          />
+        </label>
+        <label for="status">Activity Status:</label>
+        <label for="radio-1">
+          <input type="radio" id="radio-1" name="status" value="active" <%=
+          (user.status === 'active') ? 'checked' : '' %> /> Active
+        </label>
+        <label for="radio-2">
+          <input type="radio" id="radio-2" name="status" value="suspended" <%=
+          (user.status === 'suspended') ? 'checked' : '' %> /> Suspended
+        </label>
+        <label for="radio-3">
+          <input type="radio" id="radio-3" name="status" value="archived" <%=
+          (user.status === 'archived') ? 'checked' : '' %> /> Archived
+        </label>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+    <%- include("./partials/_footer.ejs") %>
+  </body>
+</html>

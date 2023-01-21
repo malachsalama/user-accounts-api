@@ -1,0 +1,15 @@
+<%- include("./partials/_header.ejs") %>
+
+<body>
+  <%- include("./partials/_nav.ejs") %>
+
+  <h2>List of Users:</h2>
+  <ul>
+    <% users.forEach(user=> { %>
+    <a href="/user?id=<%= user._id%>">
+      <li><%= user.name %></li>
+    </a>
+    <% }) %>
+  </ul>
+  <%- include("./partials/_footer.ejs") %>
+</body>
