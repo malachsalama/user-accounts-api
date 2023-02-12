@@ -1,5 +1,5 @@
 $("#create_user").submit(function (event) {
-  alert("Data submitted successfully!");
+  alert("User created successfully!");
 });
 
 $("#update_user").submit(function (event) {

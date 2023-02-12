@@ -14,6 +14,7 @@ const userSchema = new mongoose.Schema(
     birthDate: {
       type: Date,
       required: true,
+      get: (val) => moment(val).format("YYYY-MM-DD"),
     },
   },
   {
@@ -22,7 +23,6 @@ const userSchema = new mongoose.Schema(
       updatedAt: "updated_at",
       type: Date,
       default: Date.now,
-      get: (val) => moment(val).format("YYYY-MM-DD"),
     },
   }
 );

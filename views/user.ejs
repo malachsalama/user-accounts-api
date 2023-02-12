@@ -10,7 +10,7 @@
     <ul>
       <li>Email: <%= user.email %></li>
       <li>Activity Status: <%= user.status %></li>
-      <li>Date of birth: <%= user.birthDate %></li>
+      <li>Date of birth: <%= user.birthDate.toString().substring(0, 10) %></li>
     </ul>
     <a href="/update-user?id=<%= user._id %>"><button>Update</button></a
     ><button id="delete_user" data-id="<%= user._id %>">Delete</button>

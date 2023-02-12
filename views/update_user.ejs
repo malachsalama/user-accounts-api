@@ -31,7 +31,7 @@
             type="date"
             id="birthDate"
             name="birthDate"
-            value="<%= user.birthDate %>"
+            value="<%= user.birthDate.toString().substring(0, 10) %>"
             required
           />
         </label>
