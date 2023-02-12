@@ -2,6 +2,14 @@ $("#create_user").submit(function (event) {
   alert("User created successfully!");
 });
 
+//  Alerts as soon as the user visits the update user page for suspended or archived users
+$(document).ready(function () {
+  const userStatus = $("input[name='status']:checked").val();
+  if (userStatus === "suspended" || userStatus === "archived") {
+    alert("Suspended or archived users cannot be updated!");
+  }
+});
+
 $("#update_user").submit(function (event) {
   event.preventDefault();
 
