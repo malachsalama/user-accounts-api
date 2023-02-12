@@ -3,9 +3,18 @@ const moment = require("moment");
 
 const userSchema = new mongoose.Schema(
   {
-    name: String,
-    email: String,
-    age: Number,
+    name: {
+      type: String,
+      required: true,
+    },
+    email: {
+      type: String,
+      required: true,
+    },
+    age: {
+      type: Number,
+      required: true,
+    },
     status: {
       type: String,
       enum: ["active", "suspended", "archived"],
